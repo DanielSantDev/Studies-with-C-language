@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define ex1
+#define ex44
 
 #ifdef ex1
 //Imprimir um n�mero inteiro
