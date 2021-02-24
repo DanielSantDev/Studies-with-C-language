@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-#define ex20
+#define ex21
 
 #ifdef ex1
 main(){
@@ -519,4 +519,70 @@ int main()
 }
 #endif // ex20
 
-#ifdef
+#ifdef ex21
+/**/
+
+int main()
+{
+    int opc,a,b;
+    printf("Digite uma opcao;\n");
+    printf("1 - Soma de 2 numeros.\n");
+    printf("2 - Diferenca entre 2 numeros(maior pelo menor)\n");
+    printf("3 - Produto entre 2 numeros.\n");
+    printf("4 - Divisao entre 2 numeros (o denominador nao pode ser zero)\n");
+    printf("Opcao: ");
+    scanf("%d",&opc);
+    switch(opc)
+    {
+        case 1:
+        {
+            printf("Digite um numero.");
+            scanf("%d",&a);
+            printf("Digite outro numero.");
+            scanf("%d",&b);
+            printf("A soma desses dois numeros eh %d.", a+b);
+        }
+        case 2:
+        {
+            printf("Digite um numero.");
+            scanf("%d",&a);
+            printf("Digite outro numero.");
+            scanf("%d",&b);
+            if(b > a)
+            {
+                printf("A diferenca entre esses numeros eh: %d", b-a);
+            }else
+            {
+                printf("A diferenca entre esses numeros eh: %d", a-b);
+            }
+        }
+        case 3:
+        {
+            printf("Digite um numero.");
+            scanf("%d",&a);
+            printf("Digite outro numero.");
+            scanf("%d",&b);
+            printf("O produto entre o dois numeros digitados eh: %d", a*b);
+        }
+        case 4:
+        {
+            printf("Digite um numero.");
+            scanf("%d",&a);
+            printf("Digite outro numero.");
+            scanf("%d",&b);
+            if( b > 0)
+            {
+                printf("A divisao entre os dois numeros eh: %f", (float)a/b);
+            }
+        }
+    }
+}
+#endif // ex21
+
+#ifdef ex22
+/**/
+int main()
+{
+
+}
+#endif // ex22
