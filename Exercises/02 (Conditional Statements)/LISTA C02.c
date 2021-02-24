@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-#define ex19
+#define ex20
 
 #ifdef ex1
 main(){
@@ -90,7 +90,7 @@ main()
     {
         printf("o numero %d eh maior.\n", x);
     }else{printf("O numero maior eh %d\n", y);}
-    printf("A diferen�a entre esses numeros eh: %d", x-y);
+    printf("A diferença entre esses numeros eh: %d", x-y);
 }
 #endif // ex6
 
@@ -231,7 +231,7 @@ main()
     scanf("%f",&n2);
     printf("Digite a terceira nota do Exame Final: ");
     scanf("%f",&n3);
-    media=(((n1*2)+(n2*3)+(n3*5))/10); //Divide por 10, pois � a qtd de termos
+    media=(((n1*2)+(n2*3)+(n3*5))/10); //Divide por 10, pois é a qtd de termos
     if(media<3)
     {
         printf("Sua media eh %.2f\nVoce foi reprovado.", media);
@@ -310,8 +310,8 @@ for(;;)
 #endif // ex15
 
 #ifdef ex16
-/*16. Usando switch, escreva um programa que leia um inteiro entre 1 e 12 e imprima o m�es
-correspondente a este numero. Isto � e, janeiro se 1, fevereiro se 2, e assim por diante.*/
+/*16. Usando switch, escreva um programa que leia um inteiro entre 1 e 12 e imprima o mˆes
+correspondente a este numero. Isto ´ e, janeiro se 1, fevereiro se 2, e assim por diante.*/
 main()
 {
     int opc=0;
@@ -389,10 +389,10 @@ main()
 #endif // ex16
 
 #ifdef ex17
-/*Fac�a um programa que calcule e mostre a �area de um trap�ezio. Sabe-se que:
+/*Fac¸a um programa que calcule e mostre a ´area de um trap´ezio. Sabe-se que:
 A =
 (basemaior + basemenor)*altura / 2
-Lembre-se a base maior e a base menor devem ser n�umeros maiores que zero.*/
+Lembre-se a base maior e a base menor devem ser n´umeros maiores que zero.*/
 int main()
 {
     float b,B,a,area;
@@ -460,7 +460,8 @@ int main()
 #endif // ex18
 
 #ifdef ex19
-/**/
+/*Faca um programa para verificar se um determinado numero inteiro e divisıvel por 3 ou
+5, mas n˜ao simultaneamente pelos dois.*/
 main()
 {
     int a;
@@ -477,3 +478,45 @@ main()
     }
 }
 #endif // ex19
+
+#ifdef ex20
+/*Dados tr ˆes valores, A, B, C, verificar se eles podem ser valores dos lados de um tri ˆangulo
+e, se forem, se ´e um tri ˆangulo escaleno, equil ´atero ou is ´oscele, considerando os seguintes
+conceitos:
+ O comprimento de cada lado de um tri ˆangulo ´e menor do que a soma dos outros
+dois lados.
+ Chama-se equilatero o triangulo que tem trˆes lados iguais.
+ Denominam-se is´osceles o triˆangulo que tem o comprimento de dois lados iguais.
+ Recebe o nome de escaleno o triˆangulo que tem os trˆes lados diferentes.*/
+int main()
+{
+    int A, B, C;
+    printf("Digite o primeiro lado: ");
+    scanf("%d",&A);
+    printf("Digite o segundo lado: ");
+    scanf("%d",&B);
+    printf("Digite o terceiro lado: ");
+    scanf("%d",&C);
+    if(A<B+C && B<C+A && C<A+B)
+    {
+        if(A == B && B == C)
+        {
+            printf("O triangulo eh um Equilatero.");
+        }else
+        if(A == B || B == C || A == C)
+        {
+            printf("O triangulo eh Isosceles.");
+        }else
+        if(A != B && B != C && A != C)
+        {
+            printf("O triangulo eh Escaleno.");
+        }
+    }else
+    {
+        printf("Os lados digitados nao representam um triangulo.");
+    }
+    return 0;
+}
+#endif // ex20
+
+#ifdef
