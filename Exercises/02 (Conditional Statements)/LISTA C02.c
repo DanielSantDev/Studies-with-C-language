@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-#define ex18
+#define ex19
 
 #ifdef ex1
 main(){
@@ -419,6 +419,61 @@ int main()
 /**/
 int main()
 {
+    int a,b;
+    char opc;
 
+    printf("Digte um numero: ");
+    scanf("%d",&a);
+    printf("Digte outro numero: ");
+    scanf("%d",&b);
+    printf("DIGITE UMA OPERACAO: +, -, * OU /\nCOMANDO: ");
+    scanf(" %c", &opc);
+    switch(opc)
+    {
+        case '+':
+        {
+            printf("A soma desses dois numeros eh: %d", a+b);
+            break;
+        }
+        case '-':
+        {
+            printf("A subtracao desses dois numeros eh: %d", a-b);
+            break;
+        }
+        case '*':
+        {
+            printf("A multiplicacao desses dois numeros eh: %d", a*b);
+            break;
+        }
+        case '/':
+        {
+            printf("A divisao desses dois numeros eh: %f", (float)a/b);
+            break;
+        }
+        default:
+        {
+            printf("COMANDO NAO RECONHECIDO");
+            break;
+        }
+    }
 }
 #endif // ex18
+
+#ifdef ex19
+/**/
+main()
+{
+    int a;
+    printf("Digite um numero inteiro: ");
+    scanf("%d",&a);
+    if(a % 3 == 0){
+    printf("O numero %d eh divisivel por 3.\n",a);
+    }else
+    if(a % 5 == 0){
+    printf("O numero %d eh divisivel por 5.\n",a);
+    }else
+    {
+        printf("Nao eh divisil nem por 3 nem por 5.");
+    }
+}
+#endif // ex19
