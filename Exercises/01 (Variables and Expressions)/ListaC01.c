@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include<math.h>
 
-#define ex44
+#define ex53
 
 #ifdef ex1
 //Imprimir um n�mero inteiro
@@ -552,7 +553,7 @@ main()
 main()
 {
     char letra;
-    printf("Digite uma letra: ");
+    printf("Digite uma letra maiuscula: ");
     scanf(" %c",&letra);
     printf("%c", letra+32);
 }
@@ -612,9 +613,25 @@ main()
 /*Fac�a um programa para leia o hor� ario (hora, minuto e segundo) de inicio e a durac� �ao, em
 segundos, de uma experi �encia biol � ogica. O programa deve resultar com o novo hor � ario
 (hora, minuto e segundo) do termino da mesma.*/
-main()
+int main()
 {
-
+    int hora, minuto, segundo, tempo, hora2,minuto2,segundo2;
+    setlocale(LC_ALL, "Portuguese");
+    printf("Experiência biológica\n");
+    printf("Digite a hora: ");
+    scanf("%d",&hora);
+    printf("Digite os minutos: ");
+    scanf("%d",&minuto);
+    printf("Digite os segundos: ");
+    scanf("%d",&segundo);
+    printf("Digite a duracao em segundos: ");
+    scanf("%d",&tempo);
+    printf("\nInicio da Experiencia: %dh %dm %ds\n", hora, minuto, segundo);
+    hora2=tempo/3600;
+    minuto2=(tempo-(hora2*3600))/60;
+    segundo2=(tempo-(hora2*3600+(minuto2*60)));
+    printf("\nTermino da Experiencia: %dh %dm %ds\n", hora+hora2, minuto+minuto2, segundo+segundo2);
+    return 0;
 }
 #endif
 
@@ -635,8 +652,67 @@ main()
 #ifdef ex51
 /*Escreva um programa que leia as coordenadas x e y de pontos no R2 e calcule sua
 dist �ancia da origem (0; 0).*/
-main()
-{
+int main(){
+
+float a,b,c,d;
+
+ printf("digite o valor da coordenada x:\t");
+ fflush(stdout);
+ scanf("%f", &a);
+ printf("digite o valor da coordenada y:\t");
+ fflush(stdout);
+ scanf("%f", &b);
+ c=(a*a)+(b*b);
+ d=sqrt(c);
+ printf("A distancia entre os dois pontos no plano R² e:\t%f", d);
+ printf("  unidades de medidas");
+return 0;
 
 }
 #endif
+
+#ifdef ex52
+/*Tres amigos jogaram na loteria. Caso eles ganhem, o premio deve ser repartido proporcionalmente
+ao valor que cada deu para a realizac˜ao da aposta. Faca um programa
+que leia quanto cada apostador investiu, o valor do premio, e imprima quanto cada um
+ganharia do premio com base no valor investido.*/
+//valor do premio 5000
+int main()
+{
+    float ap1,ap2,ap3,ap4,total,premio=5000;
+    printf("Digite a qtd investidada do 1 apostador: ");
+    scanf("%f",&ap1);
+    printf("Digite a qtd investidada do 2 apostador: ");
+    scanf("%f",&ap2);
+    printf("Digite a qtd investidada do 3 apostador: ");
+    scanf("%f",&ap3);
+    printf("O valor do premio eh 5000 reais\n");
+    total=ap1+ap2+ap3;
+    printf("O apostador 1 ganharia: %.2f\n", (ap1/total)*premio);
+    printf("O apostador 2 ganharia: %.2f\n", (ap2/total)*premio);
+    printf("O apostador 3 ganharia: %.2f\n", (ap3/total)*premio);
+    return 0;
+}
+#endif
+
+#ifdef ex53
+/*Faca um programa para ler as dimens˜oes de um terreno (comprimento c e largura l),
+bem como o preco do metro de tela p. Imprima o custo para cercar este mesmo terreno
+com tela.*/
+int main()
+{
+    float c, l, t;
+    printf("Digite o comprimento do terreno: ");
+    scanf("%f",&c);
+    printf("Digite a largura do terreno: ");
+    scanf("%f",&l);
+    printf("Digite o preço do metro2 de tela p.:");
+    scanf("%f",&t);
+    printf("O preço para cercar este terreno serah: %.2f", (c*l)*t);
+    return 0;
+}
+#endif // ex53
+
+/************/
+//FINALIZADO//
+/************/

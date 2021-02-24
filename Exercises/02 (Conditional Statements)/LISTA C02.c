@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<math.h>
 
-#define ex15
+#define ex18
 
 #ifdef ex1
 main(){
@@ -248,8 +248,177 @@ main()
 #endif // ex14
 
 #ifdef ex15
+/*Usando switch, escreva um programa que leia um inteiro entre 1 e 7 e imprima o dia
+da semana correspondente a este numero. Isto e, domingo se 1, segunda-feira se 2, e
+assim por diante.*/
 main()
+{
+    int opc=0;
+for(;;)
+{
+    printf("Digite um numero entre 1 e 7: ");
+    scanf("%d",&opc);
+    switch(opc)
+    {
+        case 1:
+        {
+            printf("Domingo\n");
+            break;
+        }
+        case 2:
+        {
+            printf("Segunda-feira\n");
+            break;
+        }
+        case 3:
+        {
+            printf("Terca-feira\n");
+            break;
+        }
+        case 4:
+        {
+            printf("Quarta-feira\n");
+            break;
+        }
+        case 5:
+        {
+            printf("Quinta-feira\n");
+            break;
+        }
+        case 6:
+        {
+            printf("Seta-feira\n");
+            break;
+        }
+        case 7:
+        {
+            printf("Sabado\n");
+            break;
+        }
+        default:
+        {
+            printf("Digitado incorretamente.\n");
+            break;
+        }
+    }
+    if(opc <=7)
+    {
+        break;
+    }
+}
+}
+#endif // ex15
+
+#ifdef ex16
+/*16. Usando switch, escreva um programa que leia um inteiro entre 1 e 12 e imprima o mˆes
+correspondente a este numero. Isto ´ e, janeiro se 1, fevereiro se 2, e assim por diante.*/
+main()
+{
+    int opc=0;
+    printf("Digite um numero entre 1 e 12: ");
+    scanf("%d",&opc);
+    switch(opc)
+    {
+        case 1:
+        {
+            printf("Janeiro\n");
+            break;
+        }
+        case 2:
+        {
+            printf("Fevereiro\n");
+            break;
+        }
+        case 3:
+        {
+            printf("Marco\n");
+            break;
+        }
+        case 4:
+        {
+            printf("Abril\n");
+            break;
+        }
+        case 5:
+        {
+            printf("Maio\n");
+            break;
+        }
+        case 6:
+        {
+            printf("Junho\n");
+            break;
+        }
+        case 7:
+        {
+            printf("Julho\n");
+            break;
+        }
+        case 8:
+        {
+            printf("Agosto\n");
+            break;
+        }
+        case 9:
+        {
+            printf("Setembro\n");
+            break;
+        }
+        case 10:
+        {
+            printf("Outubro\n");
+            break;
+        }
+        case 11:
+        {
+            printf("Novembro\n");
+            break;
+        }
+        case 12:
+        {
+            printf("Dezembro\n");
+            break;
+        }
+        default:
+        {
+            printf("Digitado incorretamente.\n");
+            break;
+        }
+    }
+}
+#endif // ex16
+
+#ifdef ex17
+/*Fac¸a um programa que calcule e mostre a ´area de um trap´ezio. Sabe-se que:
+A =
+(basemaior + basemenor)*altura / 2
+Lembre-se a base maior e a base menor devem ser n´umeros maiores que zero.*/
+int main()
+{
+    float b,B,a,area;
+    printf("Digite a Base Menor: ");
+    scanf("%f",&b);
+    printf("Digite a Base Maior: ");
+    scanf("%f",&B);
+    printf("Digite a Altura: ");
+    scanf("%f",&a);
+    if(b > 0 && B > 0)
+    {
+        area = ((B+b)*a)/2;
+        printf("A area do trapezio eh %.2f", area);
+    }else
+    {
+        printf("Dados Incorretos");
+    }
+
+    return 0;
+}
+#endif
+
+#ifdef ex18
+/**/
+int main()
 {
 
 }
-#endif // ex15
+#endif // ex18
