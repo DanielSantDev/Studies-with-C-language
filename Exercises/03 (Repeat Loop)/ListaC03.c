@@ -283,7 +283,7 @@ main()
     scanf("%[^\n]", str);
     for(i=0;i<strlen(str);i++)
     {
-        printf("valor do elemento %d da string = %c\n",i,str[i]);
+        printf("O valor do elemento %d da string = %c\n",i,str[i]);
     }
 }
 #endif // ex19

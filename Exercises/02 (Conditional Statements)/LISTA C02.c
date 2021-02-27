@@ -1,8 +1,11 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
 
-#define ex21
+
+#define ex24
+
 
 #ifdef ex1
 main(){
@@ -583,6 +586,117 @@ int main()
 /**/
 int main()
 {
-
+    int idade,tb;
+    printf("Digite a sua idade: ");
+    scanf("%d",&idade);
+    printf("Digite seu tempo de servico: ");
+    scanf("%d",&tb);
+    if(idade>=65)
+    {
+        printf("Voceh jah pode se aposentar\n");
+        printf("Pois vc jah tem 65 anos de idade.");
+    }else
+    if(tb>=30)
+    {
+        printf("Voceh jah pode se aposentar\n");
+        printf("Pois voce jah tem 30 anos trabalhados.");
+    }else
+    if(idade>=60  && tb >=25)
+    {
+        printf("Voceh jah pode se aposentar\n");
+        printf("Pois vc tem 60 anos de e 25 anos trabalhado.\n");
+    }else
+    {
+        printf("Voceh NAO pode se aposentar.");
+    }
 }
 #endif // ex22
+
+#ifdef ex23
+/*Determine se um determinado ano lido ´e bissexto. Sendo que um ano ´e bissexto se
+for divis´ıvel por 400 ou se for divis´ıvel por 4 e n˜ao for divis´ıvel por 100. Por exemplo:
+1988, 1992, 1996*/
+main()
+{
+    int ano;
+    printf("Digite o ano desejado: ");
+    scanf("%d",&ano);
+    if((ano % 4 == 0) || (ano % 400 == 0))
+    {
+        if(ano % 100 != 0)
+        {
+            printf("O ano eh Bissexto");
+        }else
+        {
+            printf("O ano nao eh bissexto");
+        }
+    }else
+    {
+        printf("O ano nao eh bissexto");
+    }
+}
+#endif // ex23
+
+#ifdef ex24
+/*Uma empresa vende o mesmo produto para quatro diferentes estados. Cada estado
+possui uma taxa diferente de imposto sobre o produto (MG 7%; SP 12%; RJ 15%; MS
+8%). Fac¸a um programa em que o usu´ ario entre com o valor e o estado destino do
+produto e o programa retorne o prec¸o final do produto acrescido do imposto do estado
+em que ele ser´a vendido. Se o estado digitado n˜ao for v´ alido, mostrar uma mensagem
+de erro.*/
+main()
+{
+    int valor,opc;
+    printf("Digite o valor do produto: ");
+    scanf("%d",&valor);
+    printf("Escolha o estado.\n");
+    printf("Escolha - Estado = Imposto\n");
+    printf("   1   -   MG    =  7%%\n   2   -   MS    =  8%%\n");
+    printf("   3   -   SP    =  12%%\n   4   -   RJ    =  15%%\n");
+    printf("Escolha: ");
+    scanf(" %d",&opc);
+
+    switch(opc)
+    {
+        case 1:
+        {
+            printf("Estado escolhido: Minas Gerais - Taxa de imposto 7%%.\n");
+            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.07));
+            break;
+        }
+        case 2:
+        {
+            printf("Estado escolhido: Mato Grosso do Sul - Taxa de imposto 8%%.\n");
+            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.08));
+            break;
+        }
+        case 3:
+        {
+            printf("Estado escolhido: São Paulo - Taxa de imposto 12%%.\n");
+            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.12));
+            break;
+        }
+        case 4:
+        {
+            printf("Estado escolhido: Rio de Janeiro - Taxa de imposto 15%%.\n");
+            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.15);
+            break;
+        }
+        default:
+        {
+            printf("O estado nao foi escolhido corretamente.\n");
+            break;
+        }
+    }
+
+}
+#endif // ex24
+
+#ifdef ex25
+#include <locale.h>
+int main(){
+    setlocale(LC_ALL, "portuguese-brazilian");
+    printf("Olá Mundo");
+    return 0;
+}
+#endif // ex25
