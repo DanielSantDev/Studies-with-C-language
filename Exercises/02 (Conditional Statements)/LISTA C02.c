@@ -1,10 +1,8 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <locale.h>
+#include <stdio.h>
 
-
-#define ex24
+#define ex29
 
 
 #ifdef ex1
@@ -646,9 +644,10 @@ em que ele ser´a vendido. Se o estado digitado n˜ao for v´ alido, mostrar uma
 de erro.*/
 main()
 {
-    int valor,opc;
+    int opc;
+    float valor;
     printf("Digite o valor do produto: ");
-    scanf("%d",&valor);
+    scanf("%f",&valor);
     printf("Escolha o estado.\n");
     printf("Escolha - Estado = Imposto\n");
     printf("   1   -   MG    =  7%%\n   2   -   MS    =  8%%\n");
@@ -659,44 +658,161 @@ main()
     switch(opc)
     {
         case 1:
-        {
             printf("Estado escolhido: Minas Gerais - Taxa de imposto 7%%.\n");
-            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.07));
+            printf("O preco final do produto com o imposto eh R$%f\n",valor+(valor*0.07));
             break;
-        }
         case 2:
-        {
             printf("Estado escolhido: Mato Grosso do Sul - Taxa de imposto 8%%.\n");
-            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.08));
+            printf("O preco final do produto com o imposto eh R$%f\n",valor+(valor*0.08));
             break;
-        }
         case 3:
-        {
             printf("Estado escolhido: São Paulo - Taxa de imposto 12%%.\n");
-            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.12));
+            printf("O preco final do produto com o imposto eh R$%f\n",valor+(valor*0.12));
             break;
-        }
         case 4:
-        {
             printf("Estado escolhido: Rio de Janeiro - Taxa de imposto 15%%.\n");
-            printf("O preco final do produto com o imposto eh R$%d\n",valor+(valor*0.15);
+            printf("O preco final do produto com o imposto eh R$%f\n",valor+(valor*0.15));
             break;
-        }
         default:
-        {
             printf("O estado nao foi escolhido corretamente.\n");
             break;
-        }
     }
 
 }
 #endif // ex24
 
 #ifdef ex25
-#include <locale.h>
-int main(){
-    setlocale(LC_ALL, "portuguese-brazilian");
-    printf("Olá Mundo");
+int main(void){
+    float a, b, c, delta, x1, x2;
+    printf("Digite o valor de ax^2: ");
+    scanf("%f",&a);
+    if(a == 0) {
+        printf("\nNao eh equacao do segundo grau\n");
+        exit(0);
+    }
+    printf("Digite o valor de bx: ");
+    scanf("%f",&b);
+    printf("Digite o valor de c: ");
+    scanf("%f",&c);
+    delta = (b*b)-(4*(a*c));
+    printf("Delta = %f\n",delta);
+    if(delta < 0) {
+        printf("Nao existe raiz!\n");
+    }else
+    if(delta == 0) {
+        x1 = (-b+sqrt(delta)) / (2*a);
+        x2 = (-b-sqrt(delta)) / (2*a);
+        printf("Raiz X: %.2f\n",x1);
+        printf("Raiz Unica!\n");
+    }else
+    if(delta > 0) {
+        x1 = (-b+sqrt(delta)) / (2*a);
+        x2 = (-b-sqrt(delta)) / (2*a);
+        printf("Raiz X1: %.2f\n",x1);
+        printf("Raiz X2: %.2f\n",x2);
+    }
     return 0;
 }
 #endif // ex25
+
+#ifdef ex26
+int main() {
+    float Km, L, consumo;
+    printf("Digite a distancia em Km: ");
+    scanf("%f", &Km);
+    printf("Digite a quantidade de Litros de Gasolina gasta no percur: ");
+    scanf("%f", &L);
+    consumo = Km / L;
+    printf("\nSeu consumo foi de %.2f\n", consumo);
+    if(consumo < 8) {
+        printf("Venda o Carro!");
+    }else
+    if(consumo > 8 && consumo < 14) {
+        printf("Economico!!");
+    }else
+    if(consumo > 12) {
+        printf("Super Economico!!!");
+    }
+    return 0;
+}
+#endif // ex26
+
+#ifdef ex27
+int main() {
+    int age;
+    printf("Digite a Idade do nadador: ");
+    scanf("%d", &age);
+    if(age >= 5 && age <= 7) {
+        printf("Categoria Infantil A");
+    }else
+    if(age >= 8 && age <= 10) {
+        printf("Categoria Infantil B");
+    }else
+    if(age >= 511 && age <= 13) {
+        printf("Categoria Juvenil A");
+    }else
+    if(age >= 14 && age <= 17) {
+        printf("Categoria Juvenil B");
+    }else
+    if(age >= 18) {
+        printf("Categoria Sênior");
+    }
+}
+#endif // ex27
+
+#ifdef ex28
+int main() {
+    int x, y, z, opc;
+    float solucao;
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &x);
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &y);
+    printf("Digite um numero inteiro positivo: ");
+    scanf("%d", &z);
+
+    while(1) {
+        printf("\n\n1 - Geometrica\n");
+        printf("2 - Ponderada\n");
+        printf("3 - Harmonica\n");
+        printf("4 - Aritmetica\n");
+        printf("0 - Sair\n\n");
+        printf("Digite a opcao desejada: ");
+        scanf("%d", &opc);
+        switch(opc){
+        case 0:
+            exit(0);
+        case 1:
+            printf("Media Geometrica\n");
+            solucao = pow( x*y*z , 1.0 / 3.0 ); // 1.0 / 3.0 Calcula a raiz cúbica
+            printf("O resultado eh: %f\n\n", solucao);
+            break;
+        case 2:
+            printf("Media Ponderada\n");
+            solucao = (x+(2*y)+(3*z))/6;
+            printf("O resultado eh: %.2f\n\n", solucao);
+            break;
+        case 3:
+            printf("Media Harmonica\n");
+            solucao = 1/((1/x)+(1/y)+(1/z));
+            printf("O resultado eh: %.2f\n\n", solucao);
+            break;
+        case 4:
+            printf("Media Aritmetica\n");
+            solucao = (x+y+z)/3;
+            printf("O resultado eh: %.2f\n\n", solucao);
+            break;
+        default:
+            printf("Tente novamente!!!\n\n");
+            break;
+        }
+    }
+    return 0;
+}
+#endif // ex28
+
+#ifdef ex29
+int main() {
+
+}
+#endif // ex29
