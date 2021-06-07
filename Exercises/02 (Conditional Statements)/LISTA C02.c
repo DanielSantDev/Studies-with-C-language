@@ -813,6 +813,7 @@ int main() {
 
 #ifdef ex29
 int main() {
-
+    int a,b;
+    printf("**PROVA DE MATEMATICA**");
 }
 #endif // ex29
